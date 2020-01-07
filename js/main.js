@@ -53,6 +53,10 @@ jQuery(document).ready(function($) {
         ],
         text: {
             color: '#111111',
+            offset: 10,
+            letterSpacing: 3,
+            orientation: 'h',
+            arc: true
         },
         line: {
             width: 10,
@@ -89,7 +93,7 @@ jQuery(document).ready(function($) {
     $('.wheel-standard').superWheel('onStart', function(results) {
 
 
-        $('.wheel-standard-spin-button').text('Spinning...');
+        $('.wheel-standard-spin-button').text('Girando ...');
 
     });
     $('.wheel-standard').superWheel('onStep', function(results) {
@@ -117,7 +121,7 @@ jQuery(document).ready(function($) {
         }
 
 
-        $('.wheel-standard-spin-button:disabled').prop('disabled', false).text('Spin');
+        $('.wheel-standard-spin-button:disabled').prop('disabled', false).text('Gira-me');
 
     });
 
