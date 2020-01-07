@@ -1,0 +1,48 @@
+.header {
+    background-color: #ff914c;
+    padding: 20px 10px;
+}
+
+.header a {
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+.header a img {
+    width: 15vw;
+}
+
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.header-right {
+    float: right;
+}
+
+.header-right a {
+    border-radius: 15px 5px 15px 50px;
+    background: #ff6b0f;
+    padding: 15px;
+    width: 15vh;
+    height: 50px;
+    text-align: right;
+    color: black;
+}
+
+.header-right a:hover {
+    background-color: #ff7300;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 700px) {
+    .header a {
+        padding-left: 0px;
+    }
+    .header a img {
+        width: 20vw;
+    }
+}
