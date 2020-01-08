@@ -12,7 +12,6 @@ if (localStorage.options && localStorage.options != '{}') {
 function initOptions(options) {
     $('#option-1').remove()
     $('#rb-1').remove()
-    console.log('vou inicializar')
     for (var key in options) {
         addRow(key, counter, options[key]);
         counter++;

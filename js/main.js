@@ -1,53 +1,32 @@
 // Super Wheel Script
 jQuery(document).ready(function($) {
-    /*if (!localStorage.options || localStorage.options == '{}') {
+    var backgroundColors = ['#ffb74c', '#fc8000', '#e68c26']
+    var options = {};
+    if (!localStorage.options || localStorage.options == '{}') {
         window.location.href = './options.html';
-    }*/
+    } else {
+        options = JSON.parse(localStorage.options);
+    }
+
+    var slices = [];
+    for (var key in options) {
+        for (var i = 5; i >= options[key]; i--) {
+            slices.push({
+                text: key,
+                value: 1
+            })
+        }
+    }
+    console.log(slices);
+    shuffle(slices);
+    console.log(slices);
+    for (var i = 0; i < slices.length; i++) {
+        slices[i].background = backgroundColors[i % backgroundColors.length];
+    }
+    console.log(slices);
 
     $('.wheel-standard').superWheel({
-        slices: [{
-                text: "Shot Moscatel",
-                value: 1,
-                message: "Mama o shot!",
-                background: "#ffb74c",
-
-            },
-            {
-                text: "Nada",
-                value: 0,
-                message: "Nada",
-                background: "#fc8000",
-
-            },
-            {
-                text: "Shot Whisky",
-                value: 1,
-                message: "Mama o shot!",
-                background: "#ffb74c",
-
-            },
-            {
-                text: "Picante",
-                value: 0,
-                message: "Pica pica ai ai!",
-                background: "#fc8000",
-
-            },
-            {
-                text: "Shot Whisky Cola",
-                value: 1,
-                message: "Mama o shot!",
-                background: "#ffb74c",
-
-            },
-            {
-                text: "Roleta",
-                value: 0,
-                message: "Roleta eheh",
-                background: "#fc8000",
-
-            }
-        ],
+        slices: slices,
         text: {
             color: '#111111',
             /*offset: 10,
