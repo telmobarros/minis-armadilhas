@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
         }
     }
     console.log(slices);
-    shuffle(slices);
+    slices.sort(() => Math.random() - 0.5);
     console.log(slices);
     for (var i = 0; i < slices.length; i++) {
         slices[i].background = backgroundColors[i % backgroundColors.length];
