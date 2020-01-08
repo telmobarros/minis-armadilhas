@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="./css/fonts.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/sweetalert2.min.css">
+    <link rel="stylesheet" href="./css/superwheel.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/options.css">
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+    <title>Minis e Armadilhas</title>
+</head>
+
+<body class="">
+    <div class="header">
+        <a href="./index.html" class="logo"><img src="logo.jpg"></a>
+        <div class="header-right">
+            <a href="./options.html">Opções</a>
+        </div>
+    </div>
+
+
+    <div class="rb-box">
+        <p>Configura os vários desafios e indica a agressividade dos mesmos (1 a 5)</p>
+        <small>(Quanto MAIS agressivo for o desafio MENOS probabilidade tem de sair.)</small>
+        <div id="options-box">
+            <input type="text" id="option-1" maxlength="10" placeholder="Opção 1">
+            <div id="rb-1" class="rb">
+                <div class="rb-tab rb-tab-active" data-value="1">
+                    <div class="rb-spot">
+                        <span class="rb-txt">1</span>
+                    </div>
+                </div>
+                <div class="rb-tab" data-value="2">
+                    <div class="rb-spot">
+                        <span class="rb-txt">2</span>
+                    </div>
+                </div>
+                <div class="rb-tab" data-value="3">
+                    <div class="rb-spot">
+                        <span class="rb-txt">3</span>
+                    </div>
+                </div>
+                <div class="rb-tab" data-value="4">
+                    <div class="rb-spot">
+                        <span class="rb-txt">4</span>
+                    </div>
+                </div>
+                <div class="rb-tab" data-value="5">
+                    <div class="rb-spot">
+                        <span class="rb-txt">5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-box">
+            <button class="button" id="add">Adicionar</button>
+            <button class="button" id="remove">Remover</button>
+            <button class="button trigger">Gravar</button>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./js/superwheel.js"></script>
+    <script src="./js/sweetalert2.min.js"></script>
+    <script src="./js/options.js"></script>
+
+</body>
+
+</html>

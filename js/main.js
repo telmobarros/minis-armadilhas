@@ -1,11 +1,8 @@
 // Super Wheel Script
 jQuery(document).ready(function($) {
-    /*if (!localStorage.options || localStorage.options == {}) {
+    /*if (!localStorage.options || localStorage.options == '{}') {
         window.location.href = './options.html';
     }*/
-
-
-
 
     $('.wheel-standard').superWheel({
         slices: [{
@@ -53,10 +50,10 @@ jQuery(document).ready(function($) {
         ],
         text: {
             color: '#111111',
-            offset: 10,
+            /*offset: 10,
             letterSpacing: 3,
             orientation: 'h',
-            arc: true
+            arc: true*/
         },
         line: {
             width: 10,
@@ -107,26 +104,19 @@ jQuery(document).ready(function($) {
 
 
     $('.wheel-standard').superWheel('onComplete', function(results) {
-        //console.log(results.value);
-        if (results.value === 1) {
+        swal({
+            type: 'success',
+            title: results.text,
+            html: '<b>' + results.text + '</b>'
+        });
 
-            swal({
-                type: 'success',
-                title: "Congratulations!",
-                html: results.message + ' <br><br><b>[ ' + results.text + ' ]</b>'
-            });
-
+        /*if (results.value === 1) {
         } else {
             swal("Oops!", results.message, "error");
-        }
+        }*/
 
 
         $('.wheel-standard-spin-button:disabled').prop('disabled', false).text('Gira-me');
 
     });
-
-
-
-
-
 });

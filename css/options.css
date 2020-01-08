@@ -1,0 +1,129 @@
+/* Containers */
+
+.rb-box {
+    color: rgba(255, 255, 255, .5);
+    width: 80%;
+    max-width: 420px;
+    margin: 100px auto;
+    padding: 1.3em;
+    background: #292942;
+    border-radius: .75em;
+    -webkit-filter: drop-shadow(1px 2px 5px rgba(0, 0, 0, .3));
+    filter: drop-shadow(1px 2px 5px rgba(0, 0, 0, .3));
+    box-shadow: 0 2px 2px rgba(224, 0, 0, 0.521), 0 0px 5px rgba(243, 72, 49, 0.15), 0 0px 4px rgba(0, 0, 0, .35), 0 5px 20px rgba(243, 153, 49, 0.25), 0 15px 50px rgba(243, 49, 49, 0.75), inset 0 0 15px rgba(255, 255, 255, .05);
+    text-align: center;
+}
+
+
+/* Custom Radio Button */
+
+p {
+    font-size: .9em;
+}
+
+.rb {
+    padding: 10px 0 22px 0;
+    text-align: center;
+    background: rgba(255, 255, 255, .03);
+    border-radius: .3em;
+}
+
+.rb-tab {
+    display: inline-block;
+    position: relative;
+    width: 19%;
+}
+
+.rb-txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: .8em;
+    color: #FFFFFF;
+}
+
+.rb-spot {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .3);
+    border-radius: 100%;
+    cursor: pointer;
+    transition: ease .5s;
+}
+
+.rb-tab-active .rb-spot {
+    background: rgba(0, 0, 0, .35);
+    border: 2px solid rgba(243, 49, 128, .6);
+}
+
+
+/* Submit Button */
+
+.button-box {
+    padding: 10px 0;
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    margin-top: 1.2em;
+    padding: 1em;
+    width: 45%;
+    max-width: 220px;
+    font-size: .9em;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .15em;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 5em;
+    box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.3);
+    transition: color 0.6s, box-shadow 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+button.trigger {
+    width: 80%;
+    color: #D42D78;
+}
+
+button#add {
+    color: #009b53;
+}
+
+button#remove {
+    color: #a00000;
+}
+
+button:hover {
+    box-shadow: 0 3px 5px -5px rgba(0, 0, 0, 0.3);
+    color: #6f6f6f;
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 24px 0 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    button#add {
+        width: 70%;
+    }
+    button#remove {
+        width: 70%;
+    }
+}
