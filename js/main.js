@@ -5,14 +5,18 @@ jQuery(document).ready(function($) {
     const urlParams = new URLSearchParams(window.location.search);
     const optionsParams = urlParams.get('options');
     if (optionsParams) {
-        options = JSON.parse(optionsParams)
-        localStorage.options = optionsParams
+        options = JSON.parse(atob(optionsParams))
+        localStorage.options = atob(optionsParams)
     } else if (!localStorage.options || localStorage.options == '{}') {
         window.location.href = './options.html';
     } else {
         options = JSON.parse(localStorage.options);
-        window.history.pushState(null, '', './index.html?options=' + JSON.stringify(options));
+        window.history.pushState(null, '', './index.html?options=' + btoa(JSON.stringify(options)));
     }
+    var encoded = btoa(JSON.stringify(options))
+    console.log(encoded)
+    var decoded = JSON.parse(atob(encoded))
+    console.log(decoded)
 
     var slices = [];
     for (var key in options) {
