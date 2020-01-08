@@ -25,15 +25,14 @@ function addRow(text, n, selected) {
     $('#options-box').append('<div id="rb-' + n + '" class="rb"></div>');
     for (var i = 1; i <= 5; i++) {
         $('#rb-' + n).append('<div class="rb-tab" data-value="' + i + '"><div class="rb-spot"><span class="rb-txt">' + i + '</span></div></div>');
+        $('#rb-' + n + ' div[data-value="' + i + '"').click(function() {
+            console.log($(this))
+            $(this).parent().find(".rb-tab").removeClass("rb-tab-active");
+            $(this).addClass("rb-tab-active");
+        });
     }
     $('#rb-' + n + ' div[data-value="' + selected + '"').addClass('rb-tab-active');
-
 }
-
-$(".rb-tab").click(function() {
-    $(this).parent().find(".rb-tab").removeClass("rb-tab-active");
-    $(this).addClass("rb-tab-active");
-});
 
 $("#add").click(function() {
     counter++;

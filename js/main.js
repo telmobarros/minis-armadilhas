@@ -13,7 +13,8 @@ jQuery(document).ready(function($) {
         for (var i = 5; i >= options[key]; i--) {
             slices.push({
                 text: key,
-                value: 1
+                value: 1,
+                message: 'meme'
             })
         }
     }
@@ -57,17 +58,15 @@ jQuery(document).ready(function($) {
 
 
 
-    var tick = new Audio('../../dist/tick.mp3');
+    var tick = new Audio('./tick.mp3');
 
     $(document).on('click', '.wheel-standard-spin-button', function(e) {
-
-        $('.wheel-standard').superWheel('start', 'value', Math.floor(Math.random() * 2));
+        $('.wheel-standard').superWheel('start', 'value', 1); //Math.floor(Math.random() * 2));
         $(this).prop('disabled', true);
     });
 
 
     $('.wheel-standard').superWheel('onStart', function(results) {
-
 
         $('.wheel-standard-spin-button').text('Girando ...');
 
