@@ -6,12 +6,12 @@ if (localStorage.options && localStorage.options != '{}') {
     } catch (e) {
         console.log(e);
     }
+} else {
+    addRow('', counter, 3)
 }
 
 //add all rows for the saved options in the local storage
 function initOptions(options) {
-    $('#option-1').remove()
-    $('#rb-1').remove()
     for (var key in options) {
         addRow(key, counter, options[key]);
         counter++;

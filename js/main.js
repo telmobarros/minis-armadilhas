@@ -2,10 +2,16 @@
 jQuery(document).ready(function($) {
     var backgroundColors = ['#ffb74c', '#fc8000', '#e68c26']
     var options = {};
-    if (!localStorage.options || localStorage.options == '{}') {
+    const urlParams = new URLSearchParams(window.location.search);
+    const optionsParams = urlParams.get('options');
+    if (optionsParams) {
+        options = JSON.parse(optionsParams)
+        localStorage.options = optionsParams
+    } else if (!localStorage.options || localStorage.options == '{}') {
         window.location.href = './options.html';
     } else {
         options = JSON.parse(localStorage.options);
+        window.history.pushState(null, '', './index.html?options=' + JSON.stringify(options));
     }
 
     var slices = [];
